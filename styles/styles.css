@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+body {
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif; }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Oxygen', sans-serif; }
+
+header {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  background-image: linear-gradient(to left top, rgba(0, 0, 0, 0.9), rgba(43, 126, 204, 0.4) 99%), url(../bgbg.png);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
+  header .text-box {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+    header .text-box h1 {
+      color: white;
+      padding-bottom: .25rem;
+      border-bottom: 5px solid pink; }
+      header .text-box h1 span {
+        display: block;
+        text-transform: uppercase; }
+    header .text-box_head {
+      font-size: 3.9rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      animation-name: header_move-from-left;
+      animation-duration: 1s;
+      animation-timing-function: ease-in; }
+    header .text-box_sub {
+      font-size: 1.3rem;
+      letter-spacing: 5px;
+      animation-name: header_move-from-right;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      animation-timing-function: ease-in;
+      animation-fill-mode: backwards; }
+    header .text-box .btn:link, header .text-box .btn:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 30px;
+      display: inline-block; }
+    header .text-box .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.4); }
+    header .text-box .btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(255, 255, 255, 0.4); }
+    header .text-box .btn-pink {
+      background-color: pink;
+      color: white; }
+
+#modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s; }
+  #modal:target {
+    opacity: 1;
+    visibility: visible; }
+  #modal__close {
+    font-size: 3rem; }
+    #modal__close:link, #modal__close:visited {
+      color: #323232; }
+
+@keyframes header_move-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes header_move-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
